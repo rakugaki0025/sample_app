@@ -26,7 +26,7 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params)[:id]
+    @list = List.find(params[:id])
       # インスタンス変数=メソッド[:idカラム]　単数
   end
   
