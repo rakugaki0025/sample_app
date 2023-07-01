@@ -30,6 +30,13 @@ class ListsController < ApplicationController
       # インスタンス変数=メソッド[:idカラム]　単数
   end
   
+  def update
+    list = List.find(params[:id])
+    list.update(list_params)
+    redirect_to list_path(list.id)
+
+  end
+  
   private
   
   def list_params
