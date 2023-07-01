@@ -1,19 +1,8 @@
 Rails.application.routes.draw do
-  
-  get 'lists/new'                    # 
+
   get '/top' => 'homes#top'          # topページ？
-  recources :lists
-  post 'lists' => 'lists#create'     # データ追加(保存)ルーティング
-  get 'lists' => 'lists#index'       # indexアクション ルーティング
-  get 'lists/:id' => 'lists#show', as: 'list'
-    # .../lists/1 や .../lists/3 に該当する
-  get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
-    # ...
-  patch 'lists/:id' => 'lists#update', as: 'update_list'
-    # 更新リスト
-  delete 'lists/:id' => 'lists#destroy', as: 'destroy_list'
-    # 削除リスト
-    
+  resources :lists                   # 7項目の投稿を有する(new,show,index,edit,create,destroy,update)
+
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
 end
