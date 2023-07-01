@@ -5,12 +5,13 @@ class ListsController < ApplicationController
   end
 
   def create
-      # 
-    @list = List.new(list_params)            # list=インスタンス変数.new(引数) 
+        # 
+    @list = List.new(list_params)       # list=インスタンス変数.new(引数) 
     if @list.save
       redirect_to list_path(@list.id)
         # 
     else
+      @lists = List.all
       render :new
         #
     end
