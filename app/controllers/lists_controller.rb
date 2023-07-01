@@ -41,7 +41,8 @@ class ListsController < ApplicationController
   
   def list_params
         # ストロングパラメータ
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title, :body, :image)
+      #  imageのデータの取得を許可
   end
   
 end
