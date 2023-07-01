@@ -32,10 +32,20 @@ class ListsController < ApplicationController
   
   def update
     list = List.find(params[:id])
+      # インスタンス変数=メソッド[:idカラム]　単数
     list.update(list_params)
     redirect_to list_path(list.id)
 
   end
+  
+  def destroy
+        # 削除ボタン
+    list = List.find(params[:id])  # データ（レコード）を1件取得
+    list.destroy                   # データ（レコード）を削除
+    redirect_to '/lists'           # 投稿一覧画面へリダイレクト  
+  end
+  
+  
   
   private
   
